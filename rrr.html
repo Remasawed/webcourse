@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perfume Product</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f7f1ee;
+      display: flex;
+      justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
@@ -15,10 +19,15 @@
       background-color: #fff;
       border-radius: 12px;
       width: 300px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    figure {
       margin: 0;
     }
-    
-     img {
+
+    figure img {
       width: 100%;
       height: auto;
       display: block;
@@ -26,22 +35,22 @@
 
     main {
       padding: 20px;
-      margin: 0;
     }
 
-    .span {
+    .category {
       color: gray;
       font-size: 12px;
       letter-spacing: 1px;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
     h1 {
       font-size: 20px;
-      margin:  10px;
+      margin: 0 0 10px;
     }
 
-    .p-style {
+    p {
       font-size: 14px;
       color: #666;
       margin-bottom: 20px;
@@ -54,6 +63,7 @@
     }
 
     .old-price {
+      text-decoration: line-through;
       color: gray;
       font-size: 14px;
       margin-left: 10px;
@@ -61,18 +71,20 @@
 
     button {
       display: inline-block;
+      width: 100%;
       background-color: #2e7d32;
       color: white;
       padding: 12px;
       text-align: center;
+      border: none;
       border-radius: 6px;
+      cursor: pointer;
       margin-top: 20px;
       font-size: 16px;
-      width: 100%;
     }
 
     button:hover {
-      background-color:green;
+      background-color: #1b5e20;
     }
   </style>
 </head>
@@ -80,21 +92,21 @@
 
   <article>
     <figure>
-      <img src="chanel.jpg" alt="Gabrielle Essence Perfume Bottle" class="img">
+      <img src="perfume.jpg" alt="Gabrielle Essence Perfume Bottle">
     </figure>
 
     <main>
-      <h3 class="span">Perfume</h3>
-      <h1 class="h1">Gabrielle Essence Eau De Parfum</h1>
-      <p class="p-style">
+      <span class="category">Perfume</span>
+      <h1>Gabrielle Essence Eau De Parfum</h1>
+      <p>
         A floral, solar and voluptuous interpretation composed by Olivier Polge,
         Perfumer-Creator for the House of CHANEL.
       </p>
-      <section>
-        <h3 class="price">$149.99</h3>
-        <h3 class="old-price">$169.99</h3>
-      </section>
-      <button> Add to Cart</button>
+      <div>
+        <span class="price">$149.99</span>
+        <span class="old-price">$169.99</span>
+      </div>
+      <button>🛒 Add to Cart</button>
     </main>
   </article>
 

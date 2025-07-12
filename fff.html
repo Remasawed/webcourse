@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html >
+<head>
+  
+  <title>Pizza Price Calculator</title>
+  <style>
+   .img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.body{
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fffaf0;
+}
+section{
+    
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+}
+button {
+      padding: 7px;
+      background-color: #e67a22e8;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 11px;
+    margin-top: 20px;
+}
+main {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      gap: 20px;
+}
+h1{
+    color: #e67a22e8;
+}
+
+  </style>
+</head>
+<body class="body">
+ <img src="CSS\download.jpeg" alt="pizza" class="img">
+  <header>
+    <h1>RT pizza</h1>
+  </header>
+
+  <main>
+    <form id="pizzaForm">
+
+      <section >
+        <h2 id="size-heading">Choose Pizza Size</h2>
+        <label><input type="radio" name="size" value="10"> Small ($10)</label>
+        <label><input type="radio" name="size" value="15"> Medium ($15)</label>
+        <label><input type="radio" name="size" value="20"> Large ($20)</label>
+      </section>
+
+      <section >
+        <h2 id="topping-heading">Choose Toppings ($2 each)</h2>
+        <label><input type="checkbox" value="2"> Cheese</label>
+        <label><input type="checkbox" value="2"> Pepperoni</label>
+        <label><input type="checkbox" value="2"> Mushrooms</label>
+      </section>
+
+      <button type="button" onclick="calculatePrice()">Calculate</button>
+    </form>
+
+    <aside>
+      <p id="total">Total: $0</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Happy meal</p>
+  </footer>
+
+  <script>
+    function calculatePrice() {
+  
+      let sizeRadios = document.getElementsByName('size');
+      let sizePrice = 0;
+      for (let radio of sizeRadios) {
+        if (radio.checked) {
+          sizePrice = parseFloat(radio.value);
+          break;
+        }
+      }
+
+     
+      let toppings = document.querySelectorAll('input[type="checkbox"]:checked');
+      let toppingsPrice = toppings.length * 2;
+
+
+      let total = sizePrice + toppingsPrice;
+
+      
+      document.getElementById('total').textContent = "Total: $" + total;
+    }
+  </script>
+
+</body>
+</html>

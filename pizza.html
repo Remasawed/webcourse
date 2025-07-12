@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>RT PIZZA</title>
+    </head>
+    <body>
+        <header>
+            <h1>RT PIZA</h1>
+        </header>
+        <main>
+            <form id="pizzaForm"> 
+                <section>
+                    <h2 id="size-heading">Choose pizza size</h2>
+                    <label><input type="radio" name="size" value="10">Small (10$)</label>
+                    <label><input type="radio" name="size" value="15">Medium (15$)</label>
+                    <label><input type="radio" name="size" value="20">Small (20$)</label>
+                </section>
+                <section>
+                    <h2 id="topping-heading">Choose toppings(2$each)</h2>
+                    <label><input type="checkbox" value="2$">Cheese</label>
+                    <label><input type="checkbox" value="2$"> Pepperoni</label>
+                    <label><input type="checkbox" value="2$">Mushrooms</label>
+                </section>
+                <button type="button" onclick="calculatePrice()">Calculate</button>
+            </form>
+        </main>
+        </main>
+         <aside>
+        <p id="total">Total: $0</p>
+        </aside>
+        <script>
+            <script>
+    function calculatePrice() {
+    
+      let sizeRadios = document.getElementsByName('size');
+      let sizePrice = 0;
+      for (let radio of sizeRadios) {
+        if (radio.checked) {
+          sizePrice = parseFloat(radio.value);
+          break;
+        }
+      }
+
+      let toppings = document.querySelectorAll('input[type="checkbox"]:checked');
+      let toppingsPrice = toppings.length * 2;
+
+      let total = sizePrice + toppingsPrice;
+
+      document.getElementById('total').textContent = "Total: $" + total;
+    }
+  </script>
+        </script>
+    </body>
+</html> 

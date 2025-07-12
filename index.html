@@ -1,19 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8"./>
-<meta http-equiv="x-UA-Compatible" content="IE=edge"/>
-<meta name="=viewport" content="width=device-width,initial-scale-1.0"/>
-<title>Leon Temlate One</title>
-<!-- Main Template CSS File -->
-<link rel="stylesheet" href="css/Leon.css"/>
-<!-- Render All Elements Normally -->
-<link rel="stylesheet" herf="css/normalize.css"/>
-<link
-href="https://fonts,googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
-rel="stylesheet"
-/>
-</head>
-<body></body>
+  <title>Learn Web Development</title>
+  <style>
+  body{
+    font-family:sans-serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+    
+}
+header{
+    font-family: sans-serif;
+    background-color: #f9f9fb;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.links{
+    display: flex;
+    list-style: none;
 
+}
+
+.section1{
+    text-align: left;
+    background-color: #fff;
+}
+.section1 h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.section1 p{
+  margin-bottom: 2rem;
+}
+.start-btn{
+   background-color: #0070f3;
+  color:white;
+  padding: 8px 10px;
+  border: none;
+  font-weight: bold;
+}
+.section2{
+   display: none;
+  justify-content: space-around;
+  padding: 9px;
+  background-color: white;
+}
+.article{
+  
+   background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px;
+  text-align: left;
+}
+.article h2{
+  margin-bottom: 30px;
+}
+.article p{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.difficulty{
+  margin: 10px;
+}
+.button{
+  background-color: #0070f3;
+  color:white;
+  padding: 8px 10px;
+  border: none;
+  font-weight: bold;
+  width: 60%;
+}
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 4px;
+  background-color:gray;
+}
+
+.dot.active {
+  background-color: #0070f3;
+}
+
+</style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <ul class="links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section1">
+      <h1>Master Web Development<br>Through Practice</h1>
+      <p>Interactive tutorials and hands-on exercises to help you learn HTML, CSS, and JavaScript from scratch.</p>
+      <button class="start-btn" onclick="showCourses()">Start Learning</button>
+    </section>
+
+    <section class="section2" id="courses">
+      <article class="article">
+        <header>
+          <h2>HTML Fundamentals</h2>
+        </header>
+        <p>Learn the building blocks of web pages through interactive exercises and real-world examples.</p>
+        <p class="difficulty"> Difficulty:
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </p>
+        <button class="button">Start Practice</button>
+      </article>
+
+      <article class="article">
+        <header>
+        
+          <h2>CSS Styling</h2>
+        </header>
+        <p>Master the art of styling web pages with hands-on CSS exercises and modern design techniques.</p>
+        <p class="difficulty">Difficulty: 
+          <span class="dot active"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </p>
+        <button class="button">Start Practice</button>
+      </article>
+        <article class="article" >
+        <header>
+        
+          <h2>JavaScript Programming</h2>
+        </header>
+        <p>Build interactive web applications with step-by-step JavaScript coding challenges.</p>
+        <p class="difficulty">Difficulty: 
+          <span class="dot active"></span>
+          <span class="dot active"></span>
+          <span class="dot active"></span>
+        </p>
+        <button class="button">Start Practice</button>
+      </article>
+    </section>
+  </main>
+  <script> 
+  function showCourses(){
+    let courses = document.getElementById('courses')
+    courses.style.display = 'flex';
+    courses.scrollIntoView({behavior:'smooth'});
+  }
+    </script>
+</body>
 </html>
